@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core'; //Exportar servicios
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Artist } from '../models/artist';
-import 'rxjs/add/operator/map';
+
 import { GLOBAL } from './global';
 
 @Injectable()
@@ -15,7 +15,7 @@ export class ArtistService {
         this.url = GLOBAL.url;
 
     }
-    getArtists(token, page) {
+    getArtists(token, page) : Observable<any> {
         let headers = new HttpHeaders()
             .set('Content-type', 'application-json')
             .set('Authorization', token);
@@ -23,15 +23,15 @@ export class ArtistService {
         return this._http.get(this.url + 'artists/' + page, { headers: headers });
     }
 
-    getArtist(id:string,token) {
+    getArtist(token, id:string) : Observable<any> {
         let headers = new HttpHeaders()
             .set('Content-type', 'application-json')
             .set('Authorization', token);
 
-        return this._http.get(this.url + 'artist/'+ + id, { headers: headers });
+        return this._http.get(this.url + 'artist/' + id, { headers: headers });
     }
 
-    editArtist(token,id,artist:Artist ): Observable<any> {
+    editArtist(token, id, artist: Artist): Observable<any> {
         let params = JSON.stringify(artist);
         let headers = new HttpHeaders().set('Content-Type', 'application/json')
             .set('Authorization', token);
@@ -49,12 +49,12 @@ export class ArtistService {
         return this._http.post(this.url + 'artist', params, { headers: headers });
     }
 
-    deleteArtist(id:string,token) {
+    deleteArtist(id: string, token) : Observable<any>{
         let headers = new HttpHeaders()
             .set('Content-type', 'application-json')
             .set('Authorization', token);
 
-        return this._http.delete(this.url + 'artist/'+ + id, { headers: headers });
+        return this._http.delete(this.url + 'artist/' + id, { headers: headers });
     }
 
 }

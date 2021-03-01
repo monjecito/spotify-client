@@ -8,6 +8,7 @@ html,body{
     border-bottom: 4px solid #84BD00;
     padding-bottom: 4px;
 }
+
 .head-title{
     font-size: 20px;
     font-weight: bold;
@@ -67,3 +68,67 @@ overflow: hidden;
     width:57px;
     
     }
+
+ .list-group{
+     margin: 0px;
+     padding: 0px;
+     margin-top: 30px;
+     list-style: none;
+  
+ }   
+.list-group-item{
+    width: 300px;
+    margin: 0px;
+    padding: 0px;
+    height: 317px;
+    border:1px solid #444;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+.list-group-item .artist-image{
+    height: 245px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.list-group-item .artist-image img{
+   height: 100%;
+   min-width: 100%;
+}
+.list-group-item .artist-name{
+    color:white;
+    padding: 10px;
+    text-decoration:none;
+    background: #222326;
+  }
+.list-group-item .artist-name a{
+   color: white;
+   text-decoration: none;
+ }
+#artist-head-card .image{
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    float: left;
+    margin-right: 30px;
+
+}
+
+#artist-head-card .image img{
+    width: 130px;
+    height: 100%;
+    min-width: 100%;
+}
+
+.seguro{
+    color:white;
+    padding: 10px;
+    text-decoration:none;
+    background: #222326;
+    margin-top: -51px;
+  
+}
+.seguro .btn{
+  width: 100px;
+  height: 35px;
+}

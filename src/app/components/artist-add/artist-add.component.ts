@@ -31,7 +31,7 @@ export class ArtistAddComponent implements OnInit {
     this.token=this._userService.getToken();
     this.url=GLOBAL.url;
     this.artist=new Artist('','','');
-    this.is_edit=true;
+  
 
   }
   ngOnInit(): void {
@@ -45,7 +45,7 @@ export class ArtistAddComponent implements OnInit {
           }else{
             this.artist=response.artist;
             this.alertMessage='Artista creado correctamente';
-            //this._router.navigate(['/editar-artista',response.artist._id]);
+            this._router.navigate(['/editar-artista',response.artist._id]);
           }
       },
       error=>{
